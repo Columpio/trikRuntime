@@ -256,7 +256,9 @@ defineTest(transitiveIncludes) {
 }
 
 defineTest(PythonQtIncludes) {
-	INCLUDEPATH += $$GLOBAL_PWD/PythonQt/PythonQt/src
+#	INCLUDEPATH += $$GLOBAL_PWD/PythonQt/PythonQt/src
+	INCLUDEPATH += =/usr/include/pythonqt
+	#INCLUDEPATH += ../../../../trik-sdk/sysroots/arm926ejse-oe-linux-gnueabi/usr/include/pythonqt
 	export(INCLUDEPATH)
 }
 
