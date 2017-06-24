@@ -22,7 +22,7 @@ TrikPythonRunner::TrikPythonRunner(trikControl::BrickInterface &brick
 
 	mWorkerThread.start();
 
-	QMetaObject::invokeMethod(mScriptEngineWorker, "initPythonQt"); /// create Python main module
+	QMetaObject::invokeMethod(mScriptEngineWorker, "init"); /// create Python main module
 
 	QLOG_INFO() << "Starting TrikPythonRunner worker thread" << &mWorkerThread;
 }
@@ -44,8 +44,15 @@ void TrikPythonRunner::run(const QString &script, const QString &fileName)
 	mScriptEngineWorker->run(script);
 }
 
-void TrikPythonRunner::registerUserFunction(const QString &name, QScriptEngine::FunctionSignature function) {}
-void TrikPythonRunner::addCustomEngineInitStep(const std::function<void (QScriptEngine *)> &step) {}
+void TrikPythonRunner::registerUserFunction(const QString &name, QScriptEngine::FunctionSignature function)
+{
+	throw "Not implemented";
+}
+
+void TrikPythonRunner::addCustomEngineInitStep(const std::function<void (QScriptEngine *)> &step)
+{
+	throw "Not implemented";
+}
 
 void TrikPythonRunner::brickBeep()
 {
